@@ -1,0 +1,360 @@
+/* --- CSS Variables for Colors and Fonts --- */
+:root {
+    --primary-blue: #5c8cb2; /* A calmer, more muted blue */
+    --primary-brown: #8b5a2b; /* A rich, warm brown */
+    --text-color: #3a3a3a;
+    --bg-color: #f5f2e9; /* A soft, sandy beige */
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --country-highlight-color: #d9885f; /* A warm, terracotta color */
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+
+/* --- General Body & Background Styling --- */
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    scroll-padding-top: 80px; /* Prevents content from being hidden behind the sticky nav */
+    line-height: 1.6;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(245, 242, 233, 0.85); /* Corresponds to --bg-color with opacity */
+    z-index: -1;
+}
+
+/* --- Navigation Bar --- */
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(139, 90, 43, 0.9); /* --primary-brown with opacity */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    padding: 0.5rem 1rem;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav a {
+    color: var(--bg-color);
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav a:hover, nav a.active {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.nav-brand {
+    margin-right: auto; /* Pushes other links to the right */
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+}
+
+/* --- Header --- */
+header {
+    text-align: center;
+    padding: 2rem 1rem 4rem; /* Reduced top padding because of nav bar */
+    color: var(--primary-brown);
+}
+
+header .logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    border: 3px solid var(--primary-blue);
+    background-color: white; /* In case the logo is transparent */
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+}
+
+/* --- Main Content Sections --- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+section {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--primary-brown);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: var(--primary-blue);
+    bottom: -10px;
+    left: 20%;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 1rem auto;
+    font-size: 1.5rem;
+}
+
+.foundation-date {
+    font-style: italic;
+    color: var(--primary-blue);
+    font-weight: bold;
+}
+
+.country {
+    color: var(--country-highlight-color);
+    font-weight: bold;
+}
+
+/* --- Stats Section --- */
+#stats .count {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin: 0;
+}
+
+#stats h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-brown);
+    margin-bottom: 0;
+}
+
+/* --- Uniqueness Section --- */
+.uniqueness-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.uniqueness-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.uniqueness-card h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-brown);
+    font-size: 1.5rem;
+}
+
+.uniqueness-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+/* --- Committee Section --- */
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.committee-member {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.committee-member h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-brown);
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+}
+
+/* --- Events Section --- */
+.event-year h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--primary-brown);
+    text-align: left;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid var(--primary-blue);
+    padding-left: 1rem;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.event-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.event-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-brown);
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.event-card p {
+    padding: 0 1.5rem 1.5rem;
+    margin: 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 0 1.5rem 1rem;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--primary-brown);
+    color: var(--bg-color);
+}
+
+.social-links {
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: var(--bg-color);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.social-links a:hover {
+    border-bottom-color: var(--primary-blue);
+}
+
+/* --- Modal --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1001;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .nav-brand {
+        display: none; /* Hide brand on small screens to save space */
+    }
+    .nav-content {
+        justify-content: center;
+    }
+}
